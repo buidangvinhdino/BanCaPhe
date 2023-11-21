@@ -110,7 +110,7 @@ public class StoreFrgm extends Fragment {
         });
 
 
-        EditText btnGioHangTT = view.findViewById(R.id.btnGioHangTT);
+//        EditText btnGioHangTT = view.findViewById(R.id.btnGioHangTT);
 //        btnGioHangTT.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -254,9 +254,9 @@ public class StoreFrgm extends Fragment {
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             recycle_gioHang.setLayoutManager(linearLayoutManager);
 
-//            tongTien = daoGioHang.tongTienGiohang();
-//            String outTongTien = String.format("%,.0f", tongTien);
-//            txtGHTongTien.setText(outTongTien + " VNĐ");
+            tongTien = daoGioHang.tongTienGiohang();
+            String outTongTien = String.format("%,.0f", tongTien);
+            txtGHTongTien.setText(outTongTien + " VNĐ");
 
             edtGHTenKH.setText(null);
             edtGHTenKH.setError(null);

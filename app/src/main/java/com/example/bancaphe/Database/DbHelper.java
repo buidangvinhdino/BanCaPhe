@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
 static final String dbName = "BanCaPhe";
-static final int dbVersion = 7;
+static final int dbVersion = 8;
     public DbHelper(@Nullable Context context) {
         super(context, dbName, null, dbVersion);
     }
@@ -31,6 +31,7 @@ static final int dbVersion = 7;
                 ");");
         db.execSQL(createTableSanPham);
         db.execSQL("INSERT INTO SanPham VALUES(1,null, 'Cà phê sữa', 25, 1, 'Ngon' )");
+        db.execSQL("INSERT INTO SanPham VALUES(2,null, 'Cà phê sữa đá', 30, 1, 'Ngon' )");
 
 // Bảng chức vụ
         String createTableChucVu = "CREATE Table ChucVu(\n" +
