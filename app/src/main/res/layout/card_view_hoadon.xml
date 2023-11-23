@@ -18,7 +18,7 @@
             android:id="@+id/txtHDTenSP"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:text="Teen San Pharưerwerwerwerwerwerm"
+            android:text="Tên Sản Phẩm"
             android:maxWidth="250dp"
             android:fontFamily="@font/ct_font_regular"
             android:textSize="18dp"

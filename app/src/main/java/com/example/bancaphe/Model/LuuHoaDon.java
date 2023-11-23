@@ -18,7 +18,7 @@ public class LuuHoaDon {
     double donGia;
     double thanhTien;
 
-    public LuuHoaDon() {
+    public LuuHoaDon(int maUser, String fullName, String userName, String userSDT, int userNamSinh, double userDoanhThu) {
     }
 
     public LuuHoaDon(int maLuu, int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, String size, double donGia, double thanhTien) {
