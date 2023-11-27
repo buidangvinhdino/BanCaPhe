@@ -11,6 +11,9 @@ public class TheLoai {
         this.maLoai = maLoai;
         this.tenLoai = tenLoai;
     }
+    public TheLoai(String tenLoai) {
+        this.tenLoai = tenLoai;
+    }
 
     public int getMaLoai() {
         return maLoai;
