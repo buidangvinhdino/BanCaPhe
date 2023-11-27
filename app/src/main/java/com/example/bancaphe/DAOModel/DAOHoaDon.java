@@ -17,7 +17,7 @@ public class DAOHoaDon {
 
     //    Khởi tạo Constructor
     public DAOHoaDon(Context context){
-        dbHelper = new DbHelper(context);
+        dbHelper = new DbHelper(context, "DuAn1", null, 2);
         database = dbHelper.getWritableDatabase();
         database = dbHelper.getReadableDatabase();
     }

@@ -61,9 +61,9 @@ public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.UserView
         holder.TenSanPham.setText(sanPham.getTenSanPham());
         holder.GiaTien.setText(String.valueOf(sanPham.getPrice()));
         byte[] productsImage = sanPham.getImage();
-//        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
-//        holder.img_SanPham.setImageBitmap(bitmap);
-        //
+        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
+        holder.img_SanPham.setImageBitmap(bitmap);
+
         String outTongTien = String.format("%,.0f", sanPham.getPrice());
         holder.GiaTien.setText(outTongTien + " VNĐ");
 
@@ -119,12 +119,12 @@ public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.UserView
             holder.info_sanpham.setVisibility(View.GONE);
         }
 
-//        holder.info_sanpham.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                loadFragment(new ChiTietSPSuaFrgm(sanPham));
-//            }
-//        });
+        holder.info_sanpham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new ChiTietSPSuaFrgm(sanPham));
+            }
+        });
     }
 
     @Override

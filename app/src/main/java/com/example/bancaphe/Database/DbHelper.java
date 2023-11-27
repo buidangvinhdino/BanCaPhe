@@ -1,16 +1,17 @@
 package com.example.bancaphe.Database;
 
+
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
-static final String dbName = "BanCaPhe";
-static final int dbVersion = 8;
-    public DbHelper(@Nullable Context context) {
-        super(context, dbName, null, dbVersion);
+
+    public DbHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
     }
 
     @Override
@@ -30,19 +31,16 @@ static final int dbVersion = 8;
                 "MoTa TEXT\n" +
                 ");");
         db.execSQL(createTableSanPham);
-        db.execSQL("INSERT INTO SanPham VALUES(1,null, 'Cà phê sữa', 25, 1, 'Ngon' )");
-        db.execSQL("INSERT INTO SanPham VALUES(2,null, 'Cà phê sữa đá', 30, 1, 'Ngon' )");
-
 // Bảng chức vụ
         String createTableChucVu = "CREATE Table ChucVu(\n" +
                 "MaChucVu INTEGER PRIMARY KEY,\n" +
                 "TenChucVu TEXT\n" +
                 ");";
         db.execSQL(createTableChucVu);
-        db.execSQL("INSERT INTO ChucVu VALUES (1,'Quản Lý'),(2,'Nhân Viên')");
+        db.execSQL(InsertInto.insert_chucvu);
 
 // Bảng User
-        String tableUser = "CREATE Table User(\n" +
+        String tableUser = "CREATE Table User (\n" +
                 "MaUser INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
                 "FullName TEXT,\n" +
                 "Username TEXT,\n" +
@@ -52,10 +50,10 @@ static final int dbVersion = 8;
                 "NamSinh INTEGER\n" +
                 ");";
         db.execSQL(tableUser);
-        db.execSQL("INSERT INTO User VALUES (1,'Poly Coffee','admin',1,'admin', 0868009681, 2004)");
-
+        db.execSQL(InsertInto.insert_user);
+        db.execSQL(InsertInto.insert_user2);
 // Bảng hóa đơn
-        String tableHoaDon = "CREATE Table HoaDon(\n" +
+        String tableHoaDon = "CREATE Table HoaDon (\n" +
                 "MaHoaDon INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
                 "MaUser INTEGER REFERENCES User(MaUser),\n" +
                 "TenKhachHang TEXT,\n" +
@@ -88,20 +86,25 @@ static final int dbVersion = 8;
                 "thanhTien DOUBLE\n" +
                 ");";
         db.execSQL(tableLuuHoaDon);
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-if(oldVersion != newVersion){
-    db.execSQL("drop table if exists THELOAI");
-    db.execSQL("drop table if exists SanPham");
-    db.execSQL("drop table if exists ChucVu");
-    db.execSQL("drop table if exists User");
-    db.execSQL("drop table if exists HoaDon");
-    db.execSQL("drop table if exists GioHang");
-    db.execSQL("drop table if exists LuuHoaDon");
-onCreate(db);
-}
+        String dropLoaiSP = "drop table if exists THELOAI";
+        db.execSQL(dropLoaiSP);
+        String dropSanPham = "drop table if exists SanPham";
+        db.execSQL(dropSanPham);
+        String dropChucVu = "drop table if exists ChucVu";
+        db.execSQL(dropChucVu);
+        String dropUser = "drop table if exists User";
+        db.execSQL(dropUser);
+        String dropHoaDon = "drop table if exists HoaDon";
+        db.execSQL(dropHoaDon);
+        String dropLuuHoaDon = "drop table if exists LuuHoaDon";
+        db.execSQL(dropLuuHoaDon);
+        String dropGioHang = "drop table if exists GioHang";
+        db.execSQL(dropGioHang);
     }
+
 }
+
