@@ -10,13 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#EED4F1"
-        android:gravity="center"
+
         android:orientation="vertical"
         android:padding="25dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="250dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             android:src="@drawable/img_logo" />
 
         <TextView
@@ -24,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/ct_font_bold"
+            android:layout_gravity="center"
             android:text="Poly Coffee"
             android:textColor="#E9A800"
             android:textSize="35dp"
@@ -34,6 +36,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/ct_font_bold"
             android:text="Đăng nhập"
+            android:layout_gravity="center"
             android:textColor="@color/white"
             android:textSize="35dp"
             android:textStyle="bold" />

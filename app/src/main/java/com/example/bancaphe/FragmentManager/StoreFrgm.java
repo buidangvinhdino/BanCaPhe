@@ -60,8 +60,8 @@ public class StoreFrgm extends Fragment {
         edtGHTenKH = view.findViewById(R.id.edtGHTenKH);
         daoGioHang = new DAOGioHang(getContext());
         daoUser = new DAOUser(getContext());
-//        daoHoaDon = new DAOHoaDon(getContext());
-//        daoLuuHD = new DAOLuuHD(getContext());
+        daoHoaDon = new DAOHoaDon(getContext());
+        daoLuuHD = new DAOLuuHD(getContext());
         recycle_gioHang = view.findViewById(R.id.recycle_giohang);
         listGioHang = daoGioHang.getGioHang();
         txtGHTongTien = view.findViewById(R.id.txtGHTongTien);
@@ -100,7 +100,7 @@ public class StoreFrgm extends Fragment {
                                 daoGioHang.deleteGiohang(listGioHang.get(i));
                             }
                             createData();
-//                            txtGHTongTien.setText("0 VNĐ");
+                            txtGHTongTien.setText("0 VNĐ");
                             Toast.makeText(getContext(), "Đã xóa giỏ hàng!", Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                         }
