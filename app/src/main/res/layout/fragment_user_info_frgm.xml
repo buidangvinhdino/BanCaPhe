@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/btnBackUserInfo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginLeft="15dp"
             android:src="@drawable/ic_to_back" />
 
@@ -28,20 +28,20 @@
             android:text="Thông Tin Cá Nhân"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="25dp" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         >
 
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:src="@drawable/user_avatar"
             />
 
@@ -68,7 +68,7 @@
                 android:textColor="@color/red"
                 android:fontFamily="@font/ct_font_medium"
                 android:layout_marginLeft="15dp"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -110,7 +110,7 @@
                 android:textColor="@color/red"
                 android:fontFamily="@font/ct_font_medium"
                 android:layout_marginLeft="15dp"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -153,7 +153,7 @@
                 android:textColor="@color/red"
                 android:fontFamily="@font/ct_font_medium"
                 android:layout_marginLeft="15dp"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -194,7 +194,7 @@
                 android:textColor="@color/red"
                 android:fontFamily="@font/ct_font_medium"
                 android:layout_marginLeft="15dp"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -236,7 +236,7 @@
                 android:textColor="@color/red"
                 android:fontFamily="@font/ct_font_medium"
                 android:layout_marginLeft="15dp"
-                android:textSize="25dp" />
+                android:textSize="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
