@@ -63,62 +63,62 @@ public class ViewUserInforFrgm extends Fragment {
         }
 
 //        Button Sửa - Chuyển Fragment hiển thị thông tin nhân viên
-//        btnViewInfoSua.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                loadFragment(new SuaNVFrgm(user));
-//            }
-//        });
+        btnViewInfoSua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new SuaNVFrgm(user));
+            }
+        });
 
 //        Button Xóa
-//        btnViewInfoXoa.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                Dialog xác nhận xóa
-//                Dialog dialog = new Dialog(getActivity());
-//                dialog.setContentView(R.layout.dialog_confirm);
-//                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-//                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//
-//                TextView dialog_confirm_content = dialog.findViewById(R.id.dialog_confirm_content);
-//                EditText btnDialogHuy = dialog.findViewById(R.id.btnDialogHuy);
-//                EditText btnDialogXN = dialog.findViewById(R.id.btnDialogXN);
-//
-//                dialog_confirm_content.setText("Bạn chắc chắn muốn xóa nhân viên!");
-//
-////                Set Click Button Dialog Hủy
-//                btnDialogHuy.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        Toast.makeText(getContext(), "Hủy", Toast.LENGTH_SHORT).show();
-//                        dialog.dismiss();
-//                    }
-//                });
-//
-////                Set Click Button Dialog Xác Nhận Xóa
-//                btnDialogXN.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-////                        Gọi DAO xóa nhân viên
-//                        boolean kiemtra = daoUser.deleteUser(user.getID_User());
-//                        if (kiemtra){
-//                            Toast.makeText(getContext(), "Đã xóa nhân viên!", Toast.LENGTH_SHORT).show();
-//                            loadFragment(new TKNhanVienFrgm());
-//                        }
-//                        dialog.dismiss();
-//                    }
-//                });
-//                dialog.show();
-//            }
-//        });
-//
-////        Back
-//        btnBackViewUserInfo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                loadFragment(new TKNhanVienFrgm());
-//            }
-//        });
+        btnViewInfoXoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Dialog xác nhận xóa
+                Dialog dialog = new Dialog(getActivity());
+                dialog.setContentView(R.layout.dialog_confirm);
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                TextView dialog_confirm_content = dialog.findViewById(R.id.dialog_confirm_content);
+                EditText btnDialogHuy = dialog.findViewById(R.id.btnDialogHuy);
+                EditText btnDialogXN = dialog.findViewById(R.id.btnDialogXN);
+
+                dialog_confirm_content.setText("Bạn chắc chắn muốn xóa nhân viên!");
+
+//                Set Click Button Dialog Hủy
+                btnDialogHuy.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(), "Hủy", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                });
+
+//                Set Click Button Dialog Xác Nhận Xóa
+                btnDialogXN.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                        Gọi DAO xóa nhân viên
+                        boolean kiemtra = daoUser.deleteUser(user.getID_User());
+                        if (kiemtra){
+                            Toast.makeText(getContext(), "Đã xóa nhân viên!", Toast.LENGTH_SHORT).show();
+                            loadFragment(new TKNhanVienFrgm());
+                        }
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });
+
+//        Back
+        btnBackViewUserInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new TKNhanVienFrgm());
+            }
+        });
         return view;
     }
 

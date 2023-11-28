@@ -22,12 +22,12 @@
 
             <TextView
                 android:id="@+id/txtTkdtTenSP"
-                android:layout_width="270dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:fontFamily="@font/ct_font_medium"
                 android:maxWidth="230dp"
-                android:text="Lê Trọng Nhất Tên Dài"
+                android:text="Vinh"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />

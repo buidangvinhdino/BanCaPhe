@@ -75,19 +75,19 @@ public class Account_Fragment extends Fragment {
             }
         });
 
-//        userFrgmTKDoanhThu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                loadFragment(new TKDoanhThuFrgm());
-//            }
-//        });
+        userFrgmTKDoanhThu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new TKDoanhThuFrgm());
+            }
+        });
 
-//        userFrgmTKNhanVien.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                loadFragment(new TKNhanVienFrgm());
-//            }
-//        });
+        userFrgmTKNhanVien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new TKNhanVienFrgm());
+            }
+        });
 
         userFrgmThemSP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,12 +103,12 @@ public class Account_Fragment extends Fragment {
             }
         });
 
-//        userFrgmThemNhanVien.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                loadFragment(new ThemNhanVienFrgm());
-//            }
-//        });
+        userFrgmThemNhanVien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new ThemNhanVienFrgm());
+            }
+        });
 
         userFrgmDangXuat.setOnClickListener(new View.OnClickListener() {
             @Override
