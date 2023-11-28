@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:text="Hiện chưa có thông báo nào !"
-            android:textSize="23dp"
+            android:textSize="18dp"
             android:textColor="@color/white"
             android:fontFamily="@font/ct_font_medium"
             android:layout_marginTop="10dp"
