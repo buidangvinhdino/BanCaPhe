@@ -80,14 +80,15 @@
 
             <ImageView
                 android:id="@+id/btnHGTru"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_remove_2" />
 
             <TextView
                 android:id="@+id/edtGHSoLuong"
                 style="@style/edt_Label"
-                android:layout_width="45dp"
+                android:layout_width="20dp"
+                android:textSize="15dp"
 
                 android:text="88"
                 android:textAlignment="center"
@@ -96,8 +97,8 @@
 
             <ImageView
                 android:id="@+id/btnGHCong"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_add_circle" />
         </LinearLayout>
     </RelativeLayout>

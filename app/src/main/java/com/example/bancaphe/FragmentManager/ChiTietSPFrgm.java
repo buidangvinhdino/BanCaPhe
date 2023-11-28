@@ -56,14 +56,13 @@ public class ChiTietSPFrgm extends Fragment {
         daoGioHang = new DAOGioHang(getContext());
 
         RadioButton rdoSizeLon = view.findViewById(R.id.rdoSizeLon);
-        RadioButton rdoSizeVua = view.findViewById(R.id.rdoSizeVua);
         RadioButton rdoSizeNho = view.findViewById(R.id.rdoSizeNho);
 
 //        Set kích thước Size
 
         double donGiaGoc = sanPham.getPrice();
         rdoSizeNho.setChecked(true);
-        sizeCheck = "N";
+        sizeCheck = "M";
         donGia = 0;
 
         rdoSizeLon.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -71,24 +70,8 @@ public class ChiTietSPFrgm extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     rdoSizeNho.setChecked(false);
-                    rdoSizeVua.setChecked(false);
                     sizeCheck = "L";
                     donGia = 16000;
-                    tongTien = tinhTien(soLuong, donGia, donGiaGoc);
-                    String mTinhTien = String.format("%,.0f", tongTien);
-                    txtChiTietTongTien.setText(mTinhTien + " VNĐ");
-                }
-            }
-        });
-
-        rdoSizeVua.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    rdoSizeLon.setChecked(false);
-                    rdoSizeNho.setChecked(false);
-                    sizeCheck = "V";
-                    donGia = 10000;
                     tongTien = tinhTien(soLuong, donGia, donGiaGoc);
                     String mTinhTien = String.format("%,.0f", tongTien);
                     txtChiTietTongTien.setText(mTinhTien + " VNĐ");
@@ -101,8 +84,7 @@ public class ChiTietSPFrgm extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     rdoSizeLon.setChecked(false);
-                    rdoSizeVua.setChecked(false);
-                    sizeCheck = "N";
+                    sizeCheck = "M";
                     donGia = 0;
                     tongTien = tinhTien(soLuong, donGia, donGiaGoc);
                     String mTinhTien = String.format("%,.0f", tongTien);
@@ -154,10 +136,10 @@ public class ChiTietSPFrgm extends Fragment {
         String mGiaSP = String.format("%,.0f", giaSP);
         txtChiTietGiaSP.setText(mGiaSP + " VNĐ");
         txtChiTietMoTaSP.setText(sanPham.getMota());
-//        byte[] productsImage = sanPham.getImage();
-//        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
-//        img_sp.setImageBitmap(bitmap);
-//        img_sp1.setImageBitmap(bitmap);
+        byte[] productsImage = sanPham.getImage();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
+        img_sp.setImageBitmap(bitmap);
+        img_sp1.setImageBitmap(bitmap);
 
         tongTien = tinhTien(soLuong, donGia, donGiaGoc);
         String mTinhTien = String.format("%,.0f", tongTien);

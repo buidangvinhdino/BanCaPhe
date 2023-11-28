@@ -135,25 +135,8 @@
                             android:gravity="fill_horizontal"
                             >
 
-                            <RadioButton
-                                android:id="@+id/rdoSizeVua"
-                                android:fontFamily="@font/ct_font_medium"
-                                android:layout_width="wrap_content"
-                                android:layout_height="30dp"
-                                android:textSize="20dp"
-                                android:paddingLeft="10dp"
-                                android:text="Vừa" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="+10.000đ"
-                                android:textSize="20dp"
-                                android:fontFamily="@font/ct_font_medium"
-                                android:textColor="@color/black"
-                                android:textAlignment="textEnd"
-                                android:paddingRight="20dp"
-                                />
+
 
                         </LinearLayout>
 
