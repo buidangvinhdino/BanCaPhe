@@ -7,12 +7,13 @@
     android:layout_marginEnd="15dp"
     android:layout_marginBottom="10dp"
     android:id="@+id/cardview_sanPham"
+    android:elevation="12dp"
     android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/card"
+        android:background="@color/white"
         android:padding="5dp">
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_img"

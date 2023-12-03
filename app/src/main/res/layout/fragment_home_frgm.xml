@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FragmentManager.ProductFrgm">
+    tools:context=".FragmentManager.ProductFrgm"
+    android:background="@color/trang_xam">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+
         android:padding="10dp">
 
         <LinearLayout
@@ -17,6 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:background="@drawable/ct_edittext"
             >
 
             <TextView
@@ -25,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/red"
+                android:textColor="@color/black"
                 android:text="Xin chào, Username"
                 android:fontFamily="@font/ct_font_medium"
                 />
@@ -55,8 +58,8 @@
 
             <TextView
                 style="@style/edt_Label"
-                android:text="Ưu đãi đặc biệt hôm nay"
-                android:textColor="@color/red"
+                android:text="Ưu đãi đặc biệt hôm nay !!!"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -124,16 +127,15 @@
 
             <TextView
                 style="@style/edt_Label"
-                android:text="Sản phẩm bán chạy"
-                android:textColor="@color/red"
+                android:text="Sản phẩm bán chạy :"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_SPBanChay"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout

@@ -9,8 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EED4F1"
-
+        android:background="#FDFDFD"
         android:orientation="vertical"
         android:padding="25dp">
 
@@ -30,90 +29,110 @@
             android:textColor="#E9A800"
             android:textSize="35dp"
             android:textStyle="bold" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/ct_font_bold"
-            android:text="Đăng nhập"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:textSize="35dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="400dp"
+            android:background="@drawable/bo"
             android:orientation="vertical">
-
             <TextView
-                style="@style/edt_Label"
-                android:text="Tên Đăng Nhập" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ct_font_bold"
+                android:text="Login"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edtTenDangNhap"
-                style="@style/edt_TextBox1"
-                android:layout_marginTop="5dp"
-                android:hint="Nhập tên đăng nhập" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                style="@style/edt_Label"
-                android:text="Mật Khẩu" />
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ct_edittext"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/edt_Label"
+                    android:text="Tên Đăng Nhập"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/black"/>
 
                 <EditText
-                    android:id="@+id/edtMatKhau"
+                    android:id="@+id/edtTenDangNhap"
                     style="@style/edt_TextBox1"
+                    android:hint="Nhập tên đăng nhập"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/po"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/edt_Label"
+                    android:text="Mật Khẩu"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/black"/>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập mật khẩu"
-                    android:inputType="textPassword" />
+                    android:background="@drawable/ct_edittext"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
 
-                <ImageView
-                    android:id="@+id/img_hidePassword"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/ic_visibility_off" />
-            </RelativeLayout>
+                    android:layout_margin="10dp">
 
+                    <EditText
+                        android:id="@+id/edtMatKhau"
+                        style="@style/edt_TextBox1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nhập mật khẩu"
+                        android:inputType="textPassword"
+                        android:background="@drawable/po"
+                        />
+
+                    <ImageView
+                        android:id="@+id/img_hidePassword"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_visibility_off" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/chkNhoMK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/ct_font_regular"
+                android:text="Lưu Mật Khẩu"
+                android:textAlignment="center"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/btnDangNhap"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/btn_dangnhap" />
 
         </LinearLayout>
 
-        <CheckBox
-            android:id="@+id/chkNhoMK"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/ct_font_regular"
-            android:text="Lưu Mật Khẩu"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="18dp" />
 
-        <ImageView
-            android:id="@+id/btnDangNhap"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/btn_dangnhap" />
 
     </LinearLayout>
 </LinearLayout>

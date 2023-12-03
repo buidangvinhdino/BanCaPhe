@@ -49,12 +49,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="5dp"
                 android:gravity="center_vertical"
+                android:background="@drawable/po"
+
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="40dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_height="40dp"
                     android:src="@drawable/ic_baseline_account_circle_24" />
 
@@ -63,15 +66,12 @@
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="Thông tin tài khoản"
+                    android:textSize="20dp"
                     android:textColor="@color/black" />
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:background="@android:color/darker_gray" />
+
         </LinearLayout>
 
 
@@ -84,13 +84,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="5dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@drawable/po">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
                     android:src="@drawable/ic_baseline_password_24" />
 
                 <TextView
@@ -98,15 +100,12 @@
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="Đổi Mật Khẩu"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:background="@android:color/darker_gray" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -118,11 +117,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="5dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@drawable/po">
 
                 <ImageView
+                    android:layout_marginLeft="20dp"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/ic_baseline_payments_24" />
@@ -132,15 +133,12 @@
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="Thống Kê Doanh Thu"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:background="@android:color/darker_gray" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -152,13 +150,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="5dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@drawable/po">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
                     android:src="@drawable/ic_baseline_groups_24" />
 
                 <TextView
@@ -166,15 +166,12 @@
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="Thống Kê Nhân Viên"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:background="@android:color/darker_gray" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -186,13 +183,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="5dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@drawable/po">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
                     android:src="@drawable/ic_baseline_bookmark_add_24" />
 
                 <TextView
@@ -200,15 +199,12 @@
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="Thêm Sản Phẩm"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:background="@android:color/darker_gray" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -220,13 +216,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="5dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@drawable/po">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+
                     android:src="@drawable/ic_baseline_playlist_add_24" />
 
                 <TextView
@@ -234,15 +233,12 @@
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="Thêm Loại Sản Phẩm"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:background="@android:color/darker_gray" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -254,13 +250,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="5dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@drawable/po">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
                     android:src="@drawable/ic_baseline_person_add_alt_1_24" />
 
                 <TextView
@@ -268,15 +266,12 @@
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="Thêm Nhân Viên"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:background="@android:color/darker_gray" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -284,10 +279,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/po">
 
             <ImageView
                 android:layout_width="40dp"
+                android:layout_marginLeft="20dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_baseline_logout_24" />
 
@@ -296,7 +293,8 @@
                 android:layout_marginLeft="10dp"
                 android:paddingBottom="3dp"
                 android:text="Đăng Xuất"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="20dp"/>
 
         </LinearLayout>
 
