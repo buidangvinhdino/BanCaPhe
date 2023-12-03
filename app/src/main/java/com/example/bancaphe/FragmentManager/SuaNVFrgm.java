@@ -65,6 +65,7 @@ public class SuaNVFrgm extends Fragment {
         SharedPreferences pref = getActivity().getSharedPreferences("USER_FILE", getActivity().MODE_PRIVATE);
         int maUser = pref.getInt("MA", 0);
         User userN = daoUser.getUser(maUser);
+
         int quyenUser = userN.getMaChucVu();
 
 //        Set tittle, ẩn Mật khẩu nếu Account hiện tại là Admin

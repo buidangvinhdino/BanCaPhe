@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/txtTknvSTT"
-                android:layout_width="45dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:text="888"
                 android:textAlignment="center"
@@ -34,7 +34,7 @@
 
             <TextView
                 android:id="@+id/txtTknvTenNv"
-                android:layout_width="100dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/ct_font_medium"

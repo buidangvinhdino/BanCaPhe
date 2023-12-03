@@ -10,10 +10,6 @@ public class User {
     String SDT;
     int NamSinh;
 
-
-    public User() {
-    }
-
     public User(String fullName, String username, String password, int maChucVu, String SDT, int namSinh) {
         FullName = fullName;
         this.username = username;
@@ -42,8 +38,6 @@ public class User {
         this.tenChucVu = tenChucVu;
         this.SDT = SDT;
         NamSinh = namSinh;
-
-
     }
 
     public int getID_User() {
