@@ -48,7 +48,7 @@ public class ChiTietSPSuaFrgm extends Fragment implements View.OnClickListener {
         EditText btnCTSPSuaSua = view.findViewById(R.id.btnCTSPSuaSua);
         EditText btnCTSPSuaXoa = view.findViewById(R.id.btnCTSPSuaXoa);
         ImageView img1 = view.findViewById(R.id.img_SP);
-        ImageView img = view.findViewById(R.id.img_SP1);
+
         dao = new DAOSanPham(getContext());
         // set text cho view
         txtCTSPSuaTenSp.setText(sanPham.getTenSanPham());
@@ -64,10 +64,10 @@ public class ChiTietSPSuaFrgm extends Fragment implements View.OnClickListener {
         }
         txtCTSPSuaLoaiSP.setText("Loại sản phẩm: " + tenLSP);
         txtCTSPSuaMoTaSP.setText(sanPham.getMota());
-        byte[] productsImage = sanPham.getImage();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
-        img.setImageBitmap(bitmap);
-        img1.setImageBitmap(bitmap);
+//        byte[] productsImage = sanPham.getImage();
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
+//
+//        img1.setImageBitmap(bitmap);
         //
         String outGia = String.format("%,.0f", sanPham.getPrice());
         txtCTSPSuaGiaSP.setText(outGia + " VNĐ");

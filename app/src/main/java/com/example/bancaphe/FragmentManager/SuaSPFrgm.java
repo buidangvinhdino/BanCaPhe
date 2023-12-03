@@ -90,22 +90,8 @@ public class SuaSPFrgm extends Fragment {
         }
         edtLoaiSP.setText(tenLoai);
         edUpdateMoTa.setText(sanPham.getMota());
-        byte[] productsImage = sanPham.getImage();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
-        imgUpdate.setImageBitmap(bitmap);
+
         // xử lý sự kiện thêm ảnh
-        imgUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // request photo library
-                ActivityCompat.requestPermissions(
-                        getActivity(),
-                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        888
-                );
-                LayAnh();
-            }
-        });
 
 
         // set sự kiện
@@ -131,9 +117,7 @@ public class SuaSPFrgm extends Fragment {
                 }
                 edtLoaiSP.setText(tenLoai);
                 edUpdateMoTa.setText(sanPham.getMota());
-                byte[] productsImage = sanPham.getImage();
-                Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
-                imgUpdate.setImageBitmap(bitmap);
+
                 Toast.makeText(getContext(), "Hủy!", Toast.LENGTH_SHORT).show();
             }
         });

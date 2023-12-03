@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,65 +23,61 @@ import com.example.bancaphe.R;
 
 import java.util.ArrayList;
 
-public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewHolder> {
+public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewHolder>{
 
     private ArrayList<SanPham> list;
     private Context context;
 
-     public AdapterHome(ArrayList<SanPham> list, Context context){
-         this.list = list;
-         this.context= context;
-     }
+    public AdapterHome(ArrayList<SanPham> list, Context context) {
+        this.list = list;
+        this.context = context;
+    }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater= ((Activity)context).getLayoutInflater();
-        View view= inflater.inflate(R.layout.cardview_sp_home, parent, false);
-
-
-         return new AdapterHome.ViewHolder(view);
+        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+        View view = inflater.inflate(R.layout.cardview_sp_home, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-     SanPham sanPham= list.get(position);
-     byte[] productsImage = sanPham.getImage();
-        Bitmap bitmap= BitmapFactory.decodeByteArray(productsImage,0,productsImage.length);
-        holder.itemSpHomeImg.setImageBitmap(bitmap);
+        SanPham sanPham = list.get(position);
+//        byte[] productsImage = sanPham.getImage();
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
+//        holder.itemSpHomeImg.setImageBitmap(bitmap);
         holder.itemSpHomeTen.setText(sanPham.getTenSanPham());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 MainActivity.bottomNavigationView.setSelectedItemId(R.id.pageSanPham);
                 loadFragment(new ChiTietSPFrgm(sanPham));
             }
         });
     }
 
-    private void loadFragment(ChiTietSPFrgm chiTietSPFrgm) {
-        FragmentTransaction transaction = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, chiTietSPFrgm);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
-    public  class ViewHolder extends  RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView itemSpHomeTen;
         ImageView itemSpHomeImg;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemSpHomeTen= itemView.findViewById(R.id.itemSpHomeImg);
-            itemSpHomeImg= itemView.findViewById(R.id.itemSpHomeImg);
+            itemSpHomeTen = itemView.findViewById(R.id.itemSpHomeTen);
+            itemSpHomeImg = itemView.findViewById(R.id.itemSpHomeImg);
         }
     }
 
-
+    private void loadFragment(Fragment fragment) {
+        FragmentTransaction transaction = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 }

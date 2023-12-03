@@ -47,9 +47,7 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.ViewHold
         GioHang gioHang = list.get(position);
 
 //        Set ảnh cho Items
-        byte[] imgSP = gioHang.getImgSP();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(imgSP, 0, imgSP.length);
-        holder.imgGHAnhSP.setImageBitmap(bitmap);
+//
         holder.txtGHTenSP.setText(gioHang.getTenSP() + " - " + gioHang.getSize());
         double donGia = gioHang.getDonGia();
         String outDonGia = String.format("%,.0f", donGia);

@@ -31,6 +31,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 "MoTa TEXT\n" +
                 ");");
         db.execSQL(createTableSanPham);
+        db.execSQL(InsertInto.insert_sp);
+        db.execSQL(InsertInto.insert_sp2);
+        db.execSQL(InsertInto.insert_sp3);
 // Bảng chức vụ
         String createTableChucVu = "CREATE Table ChucVu(\n" +
                 "MaChucVu INTEGER PRIMARY KEY,\n" +

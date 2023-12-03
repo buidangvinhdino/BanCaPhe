@@ -48,7 +48,7 @@ public class ChiTietSPFrgm extends Fragment {
         txtChiTietMoTaSP = view.findViewById(R.id.txtChiTietMoTaSP);
         txtChiTietSL = view.findViewById(R.id.txtChiTietSL);
         img_sp = view.findViewById(R.id.imgCTSanPham);
-        img_sp1 = view.findViewById(R.id.imgCTSanPham1);
+
         txtChiTietTongTien = view.findViewById(R.id.txtChiTietTongTien);
         btnSoLuongTang = view.findViewById(R.id.btnSoLuongTang);
         btnSoLuongGiam = view.findViewById(R.id.btnSoLuongGiam);
@@ -136,10 +136,7 @@ public class ChiTietSPFrgm extends Fragment {
         String mGiaSP = String.format("%,.0f", giaSP);
         txtChiTietGiaSP.setText(mGiaSP + " VNĐ");
         txtChiTietMoTaSP.setText(sanPham.getMota());
-        byte[] productsImage = sanPham.getImage();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
-        img_sp.setImageBitmap(bitmap);
-        img_sp1.setImageBitmap(bitmap);
+
 
         tongTien = tinhTien(soLuong, donGia, donGiaGoc);
         String mTinhTien = String.format("%,.0f", tongTien);

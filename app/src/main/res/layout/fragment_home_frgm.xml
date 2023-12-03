@@ -126,7 +126,8 @@
                 style="@style/edt_Label"
                 android:text="Sản phẩm bán chạy"
                 android:textColor="@color/red"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_SPBanChay"

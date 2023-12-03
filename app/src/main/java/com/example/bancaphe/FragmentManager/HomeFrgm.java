@@ -68,22 +68,7 @@ public class HomeFrgm extends Fragment {
             }
         }
 
-        ArrayList<TheLoai> listLoaiSP = daoSanPham.getDSLSP();
-        for (int i = 0; i < listLoaiSP.size(); i++) {
-            ArrayList<SanPham> listSP = daoSanPham.getSPofTL(listLoaiSP.get(i).getMaLoai());
-            if (listSP.size() != 0){
-                View addLayout = inflater.inflate(R.layout.list_san_pham, null);
-                TextView tittle = addLayout.findViewById(R.id.txtSPHomeTittle);
-                tittle.setText(listLoaiSP.get(i).getTenLoai());
-                RecyclerView recyclerViewAdd = addLayout.findViewById(R.id.recycler_SPTheoLoai);
-                AdapterHome adapterHome1 = new AdapterHome(listSP, getContext());
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-                linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-                recyclerViewAdd.setLayoutManager(linearLayoutManager);
-                recyclerViewAdd.setAdapter(adapterHome1);
-                layoutParent.addView(addLayout);
-            }
-        }
+
 
         adapterHome = new AdapterHome(listSpTopOut ,getActivity());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
