@@ -126,7 +126,7 @@ public class Account_Fragment extends Fragment {
                     public void onClick(View v) {
                         Intent intent = new Intent(getActivity(), DangNhapAct.class);
                         Toast.makeText(getContext(), "Đăng xuất!", Toast.LENGTH_SHORT).show();
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                         startActivity(intent);
                         dialog.dismiss();
                     }

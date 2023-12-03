@@ -44,9 +44,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SanPham sanPham = list.get(position);
-//        byte[] productsImage = sanPham.getImage();
-//        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
-//        holder.itemSpHomeImg.setImageBitmap(bitmap);
+
         holder.itemSpHomeTen.setText(sanPham.getTenSanPham());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
