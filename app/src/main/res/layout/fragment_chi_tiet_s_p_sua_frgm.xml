@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
                 android:orientation="horizontal"
-                android:weightSum="2"
+                android:weightSum="1"
                 >
 
                 <ImageView
@@ -29,12 +29,7 @@
                     android:layout_weight="1"
                     android:src="@drawable/bac_xiu" />
 
-                <ImageView
-                    android:id="@+id/img_SP1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:src="@drawable/bac_xiu" />
+
 
             </LinearLayout>
 
