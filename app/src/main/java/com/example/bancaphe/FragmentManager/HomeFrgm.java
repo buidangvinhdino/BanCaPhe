@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -69,11 +70,9 @@ public class HomeFrgm extends Fragment {
         }
 
 
-
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
         adapterHome = new AdapterHome(listSpTopOut ,getActivity());
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recycler_SPBanChay.setLayoutManager(linearLayoutManager);
+        recycler_SPBanChay.setLayoutManager(layoutManager);
         recycler_SPBanChay.setAdapter(adapterHome);
 
 //        Notifi
@@ -99,4 +98,5 @@ public class HomeFrgm extends Fragment {
 
         return view;
     }
+
 }

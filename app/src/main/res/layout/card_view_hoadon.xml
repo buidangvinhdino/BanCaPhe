@@ -33,7 +33,7 @@
             android:maxWidth="250dp"
             android:fontFamily="@font/ct_font_regular"
             android:textAlignment="center"
-            android:textSize="10dp"
+            android:textSize="13dp"
             android:textColor="@color/white"
             />
 
@@ -45,7 +45,7 @@
             android:maxWidth="250dp"
             android:fontFamily="@font/ct_font_regular"
             android:textAlignment="center"
-            android:textSize="10dp"
+            android:textSize="13dp"
             android:textColor="@color/white"
             />
     </LinearLayout>
