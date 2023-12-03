@@ -274,13 +274,13 @@
 
             <EditText
                 android:id="@+id/btnViewInfoSua"
-                android:layout_width="150dp"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bo_tron_edt"
                 android:backgroundTint="@color/red"
                 android:text="Chỉnh Sửa"
                 android:gravity="center"
-                android:textSize="25dp"
+                android:textSize="15dp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/ct_font_medium"
                 android:textStyle="bold"
@@ -295,13 +295,13 @@
 
             <EditText
                 android:id="@+id/btnViewInfoXoa"
-                android:layout_width="150dp"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bo_tron_edt"
                 android:backgroundTint="@color/red"
                 android:text="Xóa NV"
                 android:gravity="center"
-                android:textSize="25dp"
+                android:textSize="15dp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/ct_font_medium"
                 android:textStyle="bold"

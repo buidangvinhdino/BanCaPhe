@@ -81,45 +81,40 @@ public class ProductFrgm extends Fragment {
 
                 if (!searchInput.isEmpty()){
                     txtSearch.setVisibility(View.VISIBLE);
-                    txtSearch.setOnClickListener(new View.OnClickListener() {
+                    Log.d(TAG, "onClick: " + searchInput);
+                    ArrayList<Integer> listMaSearch = new ArrayList<>();
+                    for (int i = 0; i < listTenSp.size(); i++) {
+                        if (listTenSp.get(i).contains(searchInput)){
+                            listMaSearch.add(listMaSp.get(i));
+                        }
+                    }
+
+                    if (listMaSearch.size() == 0){
+                        recyclerProduct.setVisibility(View.GONE);
+                        txtNotifi3.setVisibility(View.VISIBLE);
+                    }
+
+                    ArrayList<SanPham> listOut = new ArrayList<>();
+                    for (int i = 0; i < listMaSearch.size(); i++) {
+                        listOut.add(daoSanPham.getSPofMaSP(listMaSearch.get(i)));
+                    }
+                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+                    linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                    recyclerProduct.setLayoutManager(linearLayoutManager);
+                    AdapterSanPham adapterSanPham = new AdapterSanPham(getContext(), listOut);
+                    recyclerProduct.setAdapter(adapterSanPham);
+                    adapterSanPham.notifyDataSetChanged();
+
+                    txtSearch.setVisibility(View.GONE);
+                    icDeleteSearch.setVisibility(View.VISIBLE);
+                    icDeleteSearch.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Log.d(TAG, "onClick: " + searchInput);
-                            ArrayList<Integer> listMaSearch = new ArrayList<>();
-                            for (int i = 0; i < listTenSp.size(); i++) {
-                                if (listTenSp.get(i).contains(searchInput)){
-                                    listMaSearch.add(listMaSp.get(i));
-                                }
-                            }
-
-                            if (listMaSearch.size() == 0){
-                                recyclerProduct.setVisibility(View.GONE);
-                                txtNotifi3.setVisibility(View.VISIBLE);
-                            }
-
-                            ArrayList<SanPham> listOut = new ArrayList<>();
-                            for (int i = 0; i < listMaSearch.size(); i++) {
-                                listOut.add(daoSanPham.getSPofMaSP(listMaSearch.get(i)));
-                            }
-                            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-                            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                            recyclerProduct.setLayoutManager(linearLayoutManager);
-                            AdapterSanPham adapterSanPham = new AdapterSanPham(getContext(), listOut);
-                            recyclerProduct.setAdapter(adapterSanPham);
-                            adapterSanPham.notifyDataSetChanged();
-
-                            txtSearch.setVisibility(View.GONE);
-                            icDeleteSearch.setVisibility(View.VISIBLE);
-                            icDeleteSearch.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    edt_search.setText(null);
-                                    icDeleteSearch.setVisibility(View.GONE);
-                                    recyclerProduct.setVisibility(View.VISIBLE);
-                                    txtNotifi3.setVisibility(View.GONE);
-                                    createData(0);
-                                }
-                            });
+                            edt_search.setText(null);
+                            icDeleteSearch.setVisibility(View.GONE);
+                            recyclerProduct.setVisibility(View.VISIBLE);
+                            txtNotifi3.setVisibility(View.GONE);
+                            createData(0);
                         }
                     });
                 }

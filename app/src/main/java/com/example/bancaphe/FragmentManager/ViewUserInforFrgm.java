@@ -51,15 +51,22 @@ public class ViewUserInforFrgm extends Fragment {
         daoUser = new DAOUser(getContext());
 
 //        Settext
-        txtViewInfoFullName.setText(user.getFullName());
-        txtViewInfoUserName.setText(user.getUsername());
-        txtViewInfoChucVu.setText(user.getTenChucVu());
-        txtViewInfoSDT.setText(user.getSDT());
-        txtViewInfoNamSinh.setText(user.getNamSinh() + "");
+        if (user != null) {
+            // Đặt văn bản cho TextViews
+            txtViewInfoFullName.setText(user.getFullName());
+            txtViewInfoUserName.setText(user.getUsername());
+            txtViewInfoChucVu.setText(user.getTenChucVu());
+            txtViewInfoSDT.setText(user.getSDT());
+            txtViewInfoNamSinh.setText(String.valueOf(user.getNamSinh()));
 
-        if (user.getMaChucVu() == 1){
-            btnViewInfoXoa.setVisibility(View.GONE);
-            btnViewInfoSua.setVisibility(View.GONE);
+            // Kiểm tra vai trò và ẩn nút nếu cần thiết
+            if (user.getMaChucVu() == 1) {
+                btnViewInfoXoa.setVisibility(View.GONE);
+                btnViewInfoSua.setVisibility(View.GONE);
+            }
+        } else {
+            // Xử lý trường hợp user là null (hiển thị một thông báo lỗi, ghi log, v.v.)
+            Toast.makeText(getContext(), "User là null", Toast.LENGTH_SHORT).show();
         }
 
 //        Button Sửa - Chuyển Fragment hiển thị thông tin nhân viên
