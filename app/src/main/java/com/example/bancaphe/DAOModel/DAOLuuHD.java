@@ -55,7 +55,7 @@ public class DAOLuuHD {
                 String userSDT = cursor.getString(4);
                 int userNamSinh =cursor.getInt(5);
                 double userDoanhThu = cursor.getDouble(6);
-                listTKNV.add(new LuuHoaDon(maUser,fullName,userName,userSDT,userNamSinh,userDoanhThu));
+                listTKNV.add(new LuuHoaDon(maUser,fullName,userName,chucvu,userSDT,userNamSinh,userDoanhThu));
 
             }while (cursor.moveToNext());
         }
