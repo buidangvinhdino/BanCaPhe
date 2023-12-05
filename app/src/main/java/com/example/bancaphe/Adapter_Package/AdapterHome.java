@@ -20,6 +20,7 @@ import com.example.bancaphe.FragmentManager.ChiTietSPFrgm;
 import com.example.bancaphe.MainActivity;
 import com.example.bancaphe.Model.SanPham;
 import com.example.bancaphe.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -44,7 +45,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SanPham sanPham = list.get(position);
-
+        Picasso.get().load(sanPham.getImage()).into(holder.itemSpHomeImg);
         holder.itemSpHomeTen.setText(sanPham.getTenSanPham());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

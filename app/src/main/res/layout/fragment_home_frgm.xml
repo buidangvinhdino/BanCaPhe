@@ -26,10 +26,10 @@
                 android:id="@+id/txtHello"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:layout_marginLeft="20dp"
                 android:textColor="@color/black"
-                android:text="Xin chào, Username"
+                android:text="Ngày mới tốt lành, Username"
                 android:fontFamily="@font/ct_font_medium"
                 />
 
@@ -64,14 +64,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="200dp"
                 android:orientation="horizontal"
                 android:weightSum="1"
+                android:background="@drawable/nen"
                 >
 
                 <ViewFlipper
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+
                     android:flipInterval="2000"
                     android:autoStart="true"
                     android:inAnimation="@android:anim/slide_in_left"

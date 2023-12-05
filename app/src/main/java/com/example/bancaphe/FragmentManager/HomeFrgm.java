@@ -57,7 +57,7 @@ public class HomeFrgm extends Fragment {
         User user = daoUser.getUser(maUserNow);
         String fullName = user.getFullName();
 
-        txtHello.setText("Xin chào, " + fullName + "!");
+        txtHello.setText("Ngày mới tốt lành, " + fullName + "!");
 
         ArrayList<SanPham> listSanPham = daoSanPham.getAllProduct(0);
         ArrayList<Integer> listMaSPTop = daoLuuHD.getTopSp();

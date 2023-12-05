@@ -23,12 +23,16 @@
                 android:weightSum="1"
                 >
 
+
                 <ImageView
                     android:id="@+id/imgCTSanPham"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/bac_xiu" />
+                    android:src="@drawable/bac_xiu"
+                    android:outlineProvider="background"
+
+                    />
 
 
 
@@ -235,7 +239,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/bo_tron_edt"
+                    android:background="@drawable/ghichu"
                     android:fontFamily="@font/ct_font_medium"
                     android:gravity="top"
                     android:hint="Yêu cầu của khách hàng"

@@ -22,12 +22,12 @@ public class DAOSanPham {
         database = dbHelper.getReadableDatabase();
     }
 
-    public void insertData(byte[] image, String TenSanPham, double Price, int MaLoai, String MoTa) {
+    public void insertData(String image, String TenSanPham, double Price, int MaLoai, String MoTa) {
         String sql = "INSERT INTO SanPham VALUES (NULL, ?,?,?,?,?)";
         SQLiteStatement statement = database.compileStatement(sql);
         statement.clearBindings();
 
-        statement.bindBlob(1, image);
+        statement.bindString(1, image);
         statement.bindString(2, TenSanPham);
         statement.bindDouble(3, Price);
         statement.bindLong(4, MaLoai);
@@ -35,11 +35,11 @@ public class DAOSanPham {
         statement.executeInsert();
     }
 
-    public void updateSanPham(byte[] image, String TenSanPham, double Price, int MaLoai, String MoTa, int id) {
+    public void updateSanPham(String image, String TenSanPham, double Price, int MaLoai, String MoTa, int id) {
         String sql = "UPDATE SanPham SET image = ?, TenSanPham = ?, Price = ?, MaLoai = ?, MoTa = ? WHERE MaSanPham =?";
         SQLiteStatement statement = database.compileStatement(sql);
 
-        statement.bindBlob(1, image);
+        statement.bindString(1, image);
         statement.bindString(2, TenSanPham);
         statement.bindDouble(3, Price);
         statement.bindLong(4, MaLoai);
@@ -91,7 +91,7 @@ public class DAOSanPham {
         Cursor cursor = database.rawQuery(sql, selectionAGrs);
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
-            byte[] image = cursor.getBlob(1);
+            String image = cursor.getString(1);
             String name = cursor.getString(2);
             double price = cursor.getDouble(3);
             int maLoai = cursor.getInt(4);

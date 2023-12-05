@@ -24,7 +24,7 @@ public class DbHelper extends SQLiteOpenHelper {
 //Bảng sản phẩm
         String createTableSanPham = ("CREATE TABLE SanPham(\n" +
                 "MaSanPham INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
-                "image BLOG,\n" +
+                "image TEXT,\n" +
                 "TenSanPham TEXT,\n" +
                 "Price double,\n" +
                 "MaLoai INTEGER REFERENCES THELOAI(maLoai),\n" +

@@ -22,6 +22,7 @@ import com.example.bancaphe.DAOModel.DAOSanPham;
 import com.example.bancaphe.Model.SanPham;
 import com.example.bancaphe.Model.TheLoai;
 import com.example.bancaphe.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -64,6 +65,7 @@ public class ChiTietSPSuaFrgm extends Fragment implements View.OnClickListener {
         }
         txtCTSPSuaLoaiSP.setText("Loại sản phẩm: " + tenLSP);
         txtCTSPSuaMoTaSP.setText(sanPham.getMota());
+        Picasso.get().load(sanPham.getImage()).into(img1);
 
         //
         String outGia = String.format("%,.0f", sanPham.getPrice());

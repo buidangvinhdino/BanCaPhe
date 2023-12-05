@@ -21,6 +21,7 @@ import com.example.bancaphe.MainActivity;
 import com.example.bancaphe.Model.GioHang;
 import com.example.bancaphe.Model.SanPham;
 import com.example.bancaphe.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -131,11 +132,13 @@ public class ChiTietSPFrgm extends Fragment {
         });
 
 //        Set Data cho các View
+
         txtChiTietTenSp.setText(sanPham.getTenSanPham());
         double giaSP = sanPham.getPrice();
         String mGiaSP = String.format("%,.0f", giaSP);
         txtChiTietGiaSP.setText(mGiaSP + " VNĐ");
         txtChiTietMoTaSP.setText(sanPham.getMota());
+        Picasso.get().load(sanPham.getImage()).into(img_sp);
 
 
         tongTien = tinhTien(soLuong, donGia, donGiaGoc);

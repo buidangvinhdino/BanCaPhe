@@ -3,7 +3,7 @@ package com.example.bancaphe.Model;
 public class GioHang {
     int MaGioHang;
     int maSanPham;
-    byte [] imgSP;
+    String imgSP;
     String tenSP;
     int soLuong;
     String size;
@@ -18,7 +18,7 @@ public class GioHang {
         this.size = size;
         this.donGia = donGia;
     }
-    public GioHang(int maGioHang, int maSanPham, byte[] imgSP, String tenSP, int soLuong, String size, double donGia) {
+    public GioHang(int maGioHang, int maSanPham, String imgSP, String tenSP, int soLuong, String size, double donGia) {
         MaGioHang = maGioHang;
         this.maSanPham = maSanPham;
         this.imgSP = imgSP;
@@ -44,11 +44,11 @@ public class GioHang {
         this.maSanPham = maSanPham;
     }
 
-    public byte[] getImgSP() {
+    public String getImgSP() {
         return imgSP;
     }
 
-    public void setImgSP(byte[] imgSP) {
+    public void setImgSP(String imgSP) {
         this.imgSP = imgSP;
     }
 

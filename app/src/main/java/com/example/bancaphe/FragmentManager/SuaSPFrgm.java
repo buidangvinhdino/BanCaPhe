@@ -43,12 +43,12 @@ import java.util.ArrayList;
 
 public class SuaSPFrgm extends Fragment {
 
-    EditText edUpdateTenSP, edUpdateGiaBan, edUpdateMoTa, btnUpdate;
+    EditText edUpdateAnhSP,edUpdateTenSP, edUpdateGiaBan, edUpdateMoTa, btnUpdate;
     AutoCompleteTextView edtLoaiSP;
     SanPham sanPham;
     ImageView imgUpdate;
     DAOSanPham daoSanPham;
-    String strTenSP, strMota, strLoaiSP;
+    String strAnhSP,strTenSP, strMota, strLoaiSP;
     double strGiaban;
     ArrayList<SanPham> arrayList;
     AdapterSanPham adapter = null;
@@ -67,7 +67,7 @@ public class SuaSPFrgm extends Fragment {
         ImageView btnBackSuaSP = view.findViewById(R.id.btnBackSuaSP);
         EditText btnSuaSPHuy = view.findViewById(R.id.btnSuaSPHuy);
         EditText btnSuaSPXN = view.findViewById(R.id.btnUpdateSp);
-        imgUpdate = (ImageView) view.findViewById(R.id.update_img);
+        edUpdateAnhSP =  view.findViewById(R.id.update_anhSP);
         edUpdateTenSP = view.findViewById(R.id.update_tenSP);
         edUpdateGiaBan = view.findViewById(R.id.update_giaBan);
         edUpdateMoTa = view.findViewById(R.id.update_moTa);
@@ -78,6 +78,7 @@ public class SuaSPFrgm extends Fragment {
         adapter = new AdapterSanPham(getActivity(), arrayList);
 
 //        Settext cho Edittext
+        edUpdateAnhSP.setText(sanPham.getImage());
         edUpdateGiaBan.setText(sanPham.getPrice() + "");
         edUpdateTenSP.setText(sanPham.getTenSanPham());
         maLoai = sanPham.getMaLoai();
@@ -105,6 +106,7 @@ public class SuaSPFrgm extends Fragment {
         btnSuaSPHuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                edUpdateAnhSP.setText(sanPham.getImage());
                 edUpdateGiaBan.setText(sanPham.getPrice() + "");
                 edUpdateTenSP.setText(sanPham.getTenSanPham());
                 maLoai = sanPham.getMaLoai();
@@ -143,6 +145,7 @@ public class SuaSPFrgm extends Fragment {
         btnSuaSPXN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                strAnhSP = edUpdateAnhSP.getText().toString();
 
                 strTenSP = edUpdateTenSP.getText().toString();
                 strGiaban = Double.parseDouble(edUpdateGiaBan.getText().toString());
@@ -186,7 +189,7 @@ public class SuaSPFrgm extends Fragment {
                         public void onClick(View v) {
                             if (checkEdt()) {
                             maLoai = listMaTL.get(index);
-                                daoSanPham.updateSanPham(imageToByte(imgUpdate), strTenSP, strGiaban, maLoai, strMota, sanPham.getId());
+                                daoSanPham.updateSanPham(strAnhSP, strTenSP, strGiaban, maLoai, strMota, sanPham.getId());
                                 Toast.makeText(getActivity(), "Sửa thành công", Toast.LENGTH_SHORT).show();
                                 loadFragment(new ProductFrgm());
                                 resetEdt();
@@ -206,42 +209,11 @@ public class SuaSPFrgm extends Fragment {
     }
 
     //Cấp quyền lấy ảnh
-    private void LayAnh() {
-        //cấp quyền từ người dùng
-        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 999);
-            //cho phép sử dụng
-        } else {
-            Intent intent = new Intent(Intent.ACTION_PICK);//truy cập vào bộ nhớ của máy
-            intent.setType("image/*");
-            startActivityForResult(intent, 888);
-        }
-    }
 
     Bitmap imgChose = null;
 
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == 888 && resultCode == RESULT_OK && data != null) {
-            Uri uri = data.getData();
-            try {
-                InputStream inputStream = getActivity().getContentResolver().openInputStream(uri);
-                imgChose = BitmapFactory.decodeStream(inputStream); // lấy ảnh từ bộ nhớ
-                imgUpdate.setImageBitmap(imgChose);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
     //image to byte
-    private byte[] imageToByte(ImageView image) {
-        Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
-        byte[] byteArray = outputStream.toByteArray();
-        return byteArray;
-    }
 
     //replaceFragment
     private void loadFragment(Fragment fragment) {
@@ -255,6 +227,11 @@ public class SuaSPFrgm extends Fragment {
     private boolean checkEdt() {
 
         boolean checkAdd = true;
+        if (strAnhSP.isEmpty()) {
+            edUpdateAnhSP.setError("Vui lòng nhập!");
+            edUpdateAnhSP.setHintTextColor(Color.RED);
+            checkAdd = false;
+        }
         if (strTenSP.isEmpty()) {
             edUpdateTenSP.setError("Vui lòng nhập!");
             edUpdateTenSP.setHintTextColor(Color.RED);
@@ -283,7 +260,8 @@ public class SuaSPFrgm extends Fragment {
 
     //    Reset Edittext
     private void resetEdt() {
-        imgUpdate.setImageResource(R.drawable.img_add_img);
+        edUpdateAnhSP.setText("");
+        edUpdateAnhSP.setHintTextColor(Color.BLACK);
         edUpdateTenSP.setText("");
         edUpdateTenSP.setHintTextColor(Color.BLACK);
         edUpdateGiaBan.setText("");

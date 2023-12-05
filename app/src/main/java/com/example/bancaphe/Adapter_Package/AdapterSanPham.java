@@ -27,6 +27,7 @@ import com.example.bancaphe.Model.SanPham;
 import com.example.bancaphe.Model.User;
 import com.example.bancaphe.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -58,6 +59,7 @@ public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.UserView
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
 //        Set Data cho List Item
         SanPham sanPham = list.get(position);
+        Picasso.get().load(sanPham.getImage()).into(holder.img_SanPham);
         holder.TenSanPham.setText(sanPham.getTenSanPham());
         holder.GiaTien.setText(String.valueOf(sanPham.getPrice()));
 //

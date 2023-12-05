@@ -6,8 +6,8 @@
    android:layout_marginLeft="20dp"
     app:cardCornerRadius="10dp"
     android:layout_marginBottom="20dp"
-    android:elevation="20dp"
-    android:outlineSpotShadowColor="@color/black"
+    android:elevation="4dp"
+    app:cardElevation="8dp"
 
     >
 
@@ -37,7 +37,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="10dp"
-            android:layout_marginTop="2dp"
+
 
             />
 

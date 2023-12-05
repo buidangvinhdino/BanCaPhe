@@ -2,7 +2,7 @@ package com.example.bancaphe.Model;
 
 public class SanPham {
     int id;
-    byte [] image;
+    String image;
     String TenSanPham;
     Double Price;
     int MaLoai;
@@ -11,7 +11,7 @@ public class SanPham {
     public SanPham() {
     }
 
-    public SanPham(int id, byte[] image, String tenSanPham, Double price, int maLoai, String mota) {
+    public SanPham(int id, String image, String tenSanPham, Double price, int maLoai, String mota) {
         this.id = id;
         this.image = image;
         TenSanPham = tenSanPham;
@@ -28,11 +28,11 @@ public class SanPham {
         this.id = id;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

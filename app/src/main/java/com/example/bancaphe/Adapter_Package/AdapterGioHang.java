@@ -18,6 +18,7 @@ import com.example.bancaphe.DAOModel.DAOGioHang;
 import com.example.bancaphe.FragmentManager.StoreFrgm;
 import com.example.bancaphe.Model.GioHang;
 import com.example.bancaphe.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -48,6 +49,7 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.ViewHold
 
 //        Set ảnh cho Items
 //
+        Picasso.get().load(gioHang.getImgSP()).into(holder.imgGHAnhSP);
         holder.txtGHTenSP.setText(gioHang.getTenSP() + " - " + gioHang.getSize());
         double donGia = gioHang.getDonGia();
         String outDonGia = String.format("%,.0f", donGia);

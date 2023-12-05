@@ -42,13 +42,6 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/update_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/bac_xiu"
-            android:layout_marginTop="25dp"
-            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,6 +49,28 @@
             android:orientation="vertical"
             android:layout_margin="20dp"
             >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    style="@style/edt_Label"
+                    android:text="URL Sản Phẩm"
+                    android:textColor="@color/red"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/update_anhSP"
+                    style="@style/edt_TextBox2"
+                    android:hint="URL sản phẩm"
+                    android:layout_marginTop="5dp"
+                    android:textColorHint="@color/black"
+                    />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

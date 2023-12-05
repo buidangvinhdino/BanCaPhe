@@ -37,13 +37,13 @@ import java.util.ArrayList;
 
 public class ThemSPFrgm extends Fragment {
 
-    private ImageView AddImg;
-    private EditText edName, edPrice, edMoTa, btnAddSP, btnHuySP;
+
+    private EditText  edAnh,edName, edPrice, edMoTa, btnAddSP, btnHuySP;
     AutoCompleteTextView edtLoaiSP;
     private DAOSanPham daoSanPham;
     final int REQUEST_CODE_GALLERY = 999;
 
-    String strTenSP, strGiaban, strLoaiSP, strMota;
+    String strAnhSp,strTenSP, strGiaban, strLoaiSP, strMota;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,7 +52,7 @@ public class ThemSPFrgm extends Fragment {
         //ánh xạ
         daoSanPham = new DAOSanPham(getActivity());
         ImageView btnBackThemSP = view.findViewById(R.id.btnBackThemSP);
-        AddImg = view.findViewById(R.id.add_image);
+        edAnh = view.findViewById(R.id.edanhSP);
         edName = view.findViewById(R.id.edNameSP);
         edPrice = view.findViewById(R.id.edPrice);
         edMoTa = view.findViewById(R.id.edMoTa);
@@ -64,15 +64,6 @@ public class ThemSPFrgm extends Fragment {
             @Override
             public void onClick(View v) {
                 loadFragment(new Account_Fragment());
-            }
-        });
-        AddImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        REQUEST_CODE_GALLERY);
-                LayAnh();
             }
         });
 
@@ -100,7 +91,7 @@ public class ThemSPFrgm extends Fragment {
         btnAddSP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                strAnhSp = edAnh.getText().toString();
                 strTenSP = edName.getText().toString();
                 strGiaban = edPrice.getText().toString();
                 strMota = edMoTa.getText().toString();
@@ -125,7 +116,7 @@ public class ThemSPFrgm extends Fragment {
 
                 if (checkEdt()) {
                     if (checkTL){
-                        daoSanPham.insertData(imageToByte(AddImg), strTenSP, Double.parseDouble(strGiaban), maLSP, strMota);
+                        daoSanPham.insertData(strAnhSp, strTenSP, Double.parseDouble(strGiaban), maLSP, strMota);
                         Toast.makeText(getActivity(), "Thêm thành công", Toast.LENGTH_SHORT).show();
                         resetEdt();
                     }
@@ -167,21 +158,8 @@ public class ThemSPFrgm extends Fragment {
         }
     }
 
-    Bitmap imgChose = null;
 
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null) {
-            Uri uri = data.getData();
-            try {
-                InputStream inputStream = getActivity().getContentResolver().openInputStream(uri);
-                imgChose = BitmapFactory.decodeStream(inputStream); // lấy ảnh từ bộ nhớ
-                AddImg.setImageBitmap(imgChose);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
+
 
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = (getActivity()).getSupportFragmentManager().beginTransaction();
@@ -192,7 +170,8 @@ public class ThemSPFrgm extends Fragment {
 
     //    Reset Edittext
     private void resetEdt() {
-        AddImg.setImageResource(R.drawable.img_add_img);
+        edAnh.setText("");
+        edAnh.setHintTextColor(Color.BLACK);
         edName.setText("");
         edName.setHintTextColor(Color.BLACK);
         edPrice.setText("");
