@@ -95,7 +95,7 @@ public class AdapterTKNV extends RecyclerView.Adapter<AdapterTKNV.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView txtTknvSTT, txtTknvTenNv, txtTknvDoanhThu;
-        View bottomViewTknv;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

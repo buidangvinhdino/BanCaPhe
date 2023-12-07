@@ -51,6 +51,7 @@ public class AdapterTKDT extends RecyclerView.Adapter<AdapterTKDT.ViewHolder>{
         holder.txtTkdtThanhTien.setText(subDoanhThu + "K VNĐ");
 
 
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

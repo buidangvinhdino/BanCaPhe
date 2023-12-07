@@ -34,13 +34,13 @@
                 android:textAlignment="center"
                 android:maxWidth="250dp"
                 android:fontFamily="@font/ct_font_regular"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textColor="@color/black"
                 />
 
             <TextView
                 android:id="@+id/txtTknvTenNv"
-                android:layout_width="200dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/ct_font_medium"
@@ -52,12 +52,12 @@
 
             <TextView
                 android:id="@+id/txtTknvDoanhThu"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1.000.000"
                 android:fontFamily="@font/ct_font_medium"
                 android:textStyle="bold"
-                android:textSize="15dp"
+                android:textSize="13dp"
                 android:layout_marginLeft="5dp"
                 android:textColor="@color/black"
                 />

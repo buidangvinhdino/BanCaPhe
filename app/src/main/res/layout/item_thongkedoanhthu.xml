@@ -40,7 +40,7 @@
 
             <TextView
                 android:id="@+id/txtTkdtThanhTien"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1.000.000"
                 android:fontFamily="@font/ct_font_medium"
