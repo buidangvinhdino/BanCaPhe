@@ -74,9 +74,6 @@ public class AdapterTKNV extends RecyclerView.Adapter<AdapterTKNV.ViewHolder>{
         else {
             holder.txtTknvDoanhThu.setText("0 VNĐ");
         }
-        if (position == (list.size() - 1)){
-            holder.bottomViewTknv.setVisibility(View.GONE);
-        }
 
         User user = daoUser.getUser(luuHoaDon.getMaUser());
 
@@ -105,7 +102,7 @@ public class AdapterTKNV extends RecyclerView.Adapter<AdapterTKNV.ViewHolder>{
             txtTknvSTT = itemView.findViewById(R.id.txtTknvSTT);
             txtTknvTenNv = itemView.findViewById(R.id.txtTknvTenNv);
             txtTknvDoanhThu = itemView.findViewById(R.id.txtTknvDoanhThu);
-            bottomViewTknv = itemView.findViewById(R.id.bottomViewTknv);
+
         }
     }
 

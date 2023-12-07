@@ -50,9 +50,6 @@ public class AdapterTKDT extends RecyclerView.Adapter<AdapterTKDT.ViewHolder>{
         String subDoanhThu = outDoanhThu.substring(0, (outDoanhThu.length() - 4));
         holder.txtTkdtThanhTien.setText(subDoanhThu + "K VNĐ");
 
-        if (position == (listHoaDon.size() - 1)){
-            holder.bottomViewTkdt.setVisibility(View.GONE);
-        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,13 +110,13 @@ public class AdapterTKDT extends RecyclerView.Adapter<AdapterTKDT.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView txtTkdtTenSP, txtTkdtThanhTien;
-        View bottomViewTkdt;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtTkdtTenSP = itemView.findViewById(R.id.txtTkdtTenSP);
             txtTkdtThanhTien = itemView.findViewById(R.id.txtTkdtThanhTien);
-            bottomViewTkdt = itemView.findViewById(R.id.bottomViewTkdt);
+
         }
     }
 }
