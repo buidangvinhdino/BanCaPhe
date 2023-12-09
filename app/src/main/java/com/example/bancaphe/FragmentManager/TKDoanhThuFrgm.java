@@ -314,7 +314,11 @@ public class TKDoanhThuFrgm extends Fragment {
                         recycler_TKDT.setAdapter(adapterTKDT);
                     }
                     else {
+
+                        clearListTK();
+                        goneListTK();
                         Toast.makeText(getContext(), "Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc", Toast.LENGTH_SHORT).show();
+
                     }
                 }
                 else {

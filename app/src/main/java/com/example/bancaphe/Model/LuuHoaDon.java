@@ -17,6 +17,7 @@ public class LuuHoaDon {
     String size;
     double donGia;
     double thanhTien;
+    double tt;
 
     public LuuHoaDon(int maUser, String fullName, String userName, String userSDT, int userNamSinh, double userDoanhThu) {
     }
@@ -57,7 +58,7 @@ public class LuuHoaDon {
         this.thanhTien = thanhTien;
     }
 
-    public LuuHoaDon(int maUser, String tenUser, String userName, int chucVu, String userSDT, int userNamSinh, double thanhTien) {
+    public LuuHoaDon(int maUser, String tenUser, String userName, int chucVu, String userSDT, int userNamSinh, double thanhTien,double tt) {
         this.maUser = maUser;
         this.tenUser = tenUser;
         this.userName = userName;
@@ -65,6 +66,7 @@ public class LuuHoaDon {
         this.userSDT = userSDT;
         this.userNamSinh = userNamSinh;
         this.thanhTien = thanhTien;
+        this.tt = tt;
     }
 
     public LuuHoaDon(int maLuu, int maHoaDon, String tenUser, String tenKhachHang, String ngayLapHD, String tenSP, int soLuong, String size, double donGia) {
@@ -205,5 +207,13 @@ public class LuuHoaDon {
 
     public void setThanhTien(double thanhTien) {
         this.thanhTien = thanhTien;
+    }
+
+    public double getTt() {
+        return tt;
+    }
+
+    public void setTt(double tt) {
+        this.tt = tt;
     }
 }

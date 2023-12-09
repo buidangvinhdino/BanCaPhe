@@ -59,15 +59,15 @@ public class AdapterTKNV extends RecyclerView.Adapter<AdapterTKNV.ViewHolder>{
         holder.txtTknvSTT.setText(index);
         holder.txtTknvTenNv.setText(luuHoaDon.getTenUser());
 
-        if (String.valueOf(luuHoaDon.getThanhTien()) != null){
-            double doanhThu = luuHoaDon.getThanhTien();
+        if (String.valueOf(luuHoaDon.getTt()) != null){
+            double doanhThu = luuHoaDon.getTt();
             String outTongTien = String.format("%,.0f", doanhThu);
             if (outTongTien.length() > 4){
-                String subDoanhThu = outTongTien.substring(0, (outTongTien.length() - 4));
-                holder.txtTknvDoanhThu.setText(subDoanhThu + "K VNĐ");
+
+                holder.txtTknvDoanhThu.setText(outTongTien + "VNĐ");
             }
             else {
-                holder.txtTknvDoanhThu.setText(outTongTien + "K VNĐ");
+                holder.txtTknvDoanhThu.setText(outTongTien + "VNĐ");
             }
 
         }
